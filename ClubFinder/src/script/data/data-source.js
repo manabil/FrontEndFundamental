@@ -1,3 +1,5 @@
+'use strict';
+
 function DataSource(onSuccess, onFailed) {
   this.onSuccess = onSuccess;
   this.onFailed = onFailed;

@@ -1,3 +1,5 @@
+'use strict';
+
 const clubs = [
   {
     name: 'Arsenal',
