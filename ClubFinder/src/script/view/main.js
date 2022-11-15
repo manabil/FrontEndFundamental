@@ -20,7 +20,7 @@ const main = () => {
       clubElement.setAttribute('class', 'club');
 
       clubElement.innerHTML = `
-        <img class="fan-art-club" src="${fanArt}" alt="Fan Art">\n' +
+        <img class="fan-art-club" src="${fanArt}" alt="Fan Art">
         <div class="club-info">
           <h2>${name}</h2>
           <p>${description}</p>
