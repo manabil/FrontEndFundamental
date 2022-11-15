@@ -6,19 +6,9 @@ const main = () => {
   const buttonSearchElement = document.querySelector('#searchButtonElement');
   const clubListElement = document.querySelector('#clubList');
 
-  // Promise Method
-  // const onButtonSearchClicked = () => {
-  //   DataSource.searchClub(searchElement.value).then(renderResult).catch(fallbackResult);
-  // };
-
-  // Async Await method
-  const onButtonSearchClicked = async () => {
-    try {
-      const result = await DataSource.searchClub(searchElement.value);
-      renderResult(result);
-    } catch (message) {
-      fallbackResult(message);
-    }
+  const onButtonSearchClicked = () => {
+    const dataSource = new DataSource(renderResult, fallbackResult);
+    dataSource.searchClub(searchElement.value);
   };
 
   const renderResult = (results) => {
@@ -30,7 +20,7 @@ const main = () => {
       clubElement.setAttribute('class', 'club');
 
       clubElement.innerHTML = `
-        <img class="fan-art-club" src="${fanArt}" alt="Fan Art">
+        <img class="fan-art-club" src="${fanArt}" alt="Fan Art">\n' +
         <div class="club-info">
           <h2>${name}</h2>
           <p>${description}</p>
