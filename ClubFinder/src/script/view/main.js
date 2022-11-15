@@ -1,4 +1,5 @@
 'use strict';
+import DataSource from '../data/data-source.js';
 
 const main = () => {
   const searchElement = document.querySelector('#searchElement');
@@ -45,3 +46,5 @@ const main = () => {
 
   buttonSearchElement.addEventListener('click', onButtonSearchClicked);
 };
+
+export default main;
