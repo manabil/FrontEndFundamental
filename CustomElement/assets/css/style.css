@@ -6,7 +6,8 @@
   body {
   padding: 16px;
 }
-  .container {
+  article-list {
+  display: block;
   max-width: 800px;
   margin: 0 auto;
 }

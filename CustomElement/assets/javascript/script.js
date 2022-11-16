@@ -1,10 +1,9 @@
 'use strict';
 
-import './article-item.js';
-import article from './article.js';
+import './article-list.js';
+import articles from './article.js';
 
-const containerElement = document.querySelector('.container');
-const articleItemElement = document.createElement('article-item');
+const articleListElement = document.createElement('article-list');
+articleListElement.articles = articles;
 
-articleItemElement.article = article;
-containerElement.appendChild(articleItemElement);
+document.body.appendChild(articleListElement);
