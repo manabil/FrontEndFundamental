@@ -1,5 +1,6 @@
 'use strict';
-import '../componentS/search-bar.js';
+import '../components/club-list.js';
+import '../components/search-bar.js';
 import DataSource from '../data/data-source.js';
 
 const main = () => {
@@ -16,26 +17,11 @@ const main = () => {
   };
 
   const renderResult = (results) => {
-    clubListElement.innerHTML = '';
-
-    results.forEach((club) => {
-      const { name, fanArt, description } = club;
-      const clubElement = document.createElement('div');
-      clubElement.setAttribute('class', 'club');
-      clubElement.innerHTML = `
-        <img class="fan-art-club" src="${fanArt}" alt="Fan Art">
-        <div class="club-info">
-          <h2>${name}</h2>
-          <p>${description}</p>
-        </div>
-      `;
-      clubListElement.appendChild(clubElement);
-    });
+    clubListElement.clubs = results;
   };
 
   const fallbackResult = (message) => {
-    clubListElement.innerHTML = '';
-    clubListElement.innerHTML += `<h2 class="placeholder">${message}</h2>`;
+    clubListElement.renderError(message);
   };
 
   searchElement.clickEvent = onButtonSearchClicked;
