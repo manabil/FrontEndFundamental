@@ -1,0 +1,20 @@
+{
+  "name": "webclock",
+  "version": "1.0.0",
+  "description": "A unknown project that i build",
+  "main": "index.js",
+  "scripts": {
+    "lint": "npx eslint . --ext .js",
+    "pretty": "npx prettier --check .",
+    "format": "npx prettier --write .",
+    "fix": "npx eslint . --ext .js --fix",
+    "repair": "npm run format && npm run fix"
+  },
+  "author": "manabil",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.27.0",
+    "eslint-config-google": "^0.14.0",
+    "prettier": "^2.7.1"
+  }
+}
