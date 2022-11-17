@@ -4,6 +4,7 @@
   "description": "A unknown project that i build",
   "main": "index.js",
   "scripts": {
+    "start": "http-server .",
     "lint": "npx eslint . --ext .js",
     "pretty": "npx prettier --check .",
     "format": "npx prettier --write .",
@@ -15,6 +16,11 @@
   "devDependencies": {
     "eslint": "^8.27.0",
     "eslint-config-google": "^0.14.0",
+    "http-server": "^14.1.1",
     "prettier": "^2.7.1"
+  },
+  "dependencies": {
+    "jquery": "^3.6.1",
+    "moment": "^2.29.4"
   }
 }
