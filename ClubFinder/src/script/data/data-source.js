@@ -1,12 +1,12 @@
 'use strict';
-import clubs from './clubs.js';
+import axios from 'axios';
 
 class DataSource {
   static async searchClub(keyword) {
     try {
-      const response = await fetch(`https://sports-api.dicoding.dev/teams/search?t=${keyword}`);
-      const responseJSON = await response.json();
-      return responseJSON.teams;
+      const response = await axios.get(`https://sports-api.dicoding.dev/teams/search?t=${keyword}`);
+      console.log(response);
+      return response.data.teams;
     } catch (error) {
       return `${keyword} is not found`;
     }

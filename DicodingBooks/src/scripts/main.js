@@ -1,5 +1,12 @@
+import axios from 'axios';
+
 function main() {
   const baseUrl = 'https://books-api.dicoding.dev';
+  const request = axios.create({
+    baseURL: 'https://books-api.dicoding.dev',
+    headers: { 'X-Auth-Token': '12345' },
+  });
+
   const getBook = async () => {
     // XMR Request
     // const xhr = new XMLHttpRequest();
@@ -34,13 +41,11 @@ function main() {
     //   });
     // Async Request
     try {
-      const response = await fetch(`${baseUrl}/list`);
-      const responseJson = await response.json();
-
-      if (responseJson.error) {
-        showResponseMessage(responseJson.message);
+      const response = await request.get('/list');
+      if (response.data.error) {
+        showResponseMessage(response.data.message);
       } else {
-        renderAllBooks(responseJson.books);
+        renderAllBooks(response.data.books);
       }
     } catch (error) {
       showResponseMessage(error);
@@ -83,17 +88,9 @@ function main() {
     //   });
     // Async Request
     try {
-      const options = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Auth-Token': '12345',
-        },
-        body: JSON.stringify(book),
-      };
-      const response = await fetch(`${baseUrl}/add`, options);
-      const responseJson = await response.json();
-      showResponseMessage(responseJson.message);
+      const response = await request.post('/add', book);
+      console.log(response);
+      showResponseMessage(response.data.message);
       getBook();
     } catch (error) {
       showResponseMessage(error);
@@ -136,17 +133,8 @@ function main() {
     //   });
     // Async Request
     try {
-      const options = {
-        method: 'PUT',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Auth-Token': '12345',
-        },
-        body: JSON.stringify(book),
-      };
-      const response = await fetch(`${baseUrl}/edit/${book.id}`, options);
-      const responseJson = await response.json();
-      showResponseMessage(responseJson.message);
+      const response = await request.put(`/edit/${book.id}`, book);
+      showResponseMessage(response.data.message);
       getBook();
     } catch (error) {
       showResponseMessage(error);
@@ -186,15 +174,8 @@ function main() {
     //   });
     // Async Request
     try {
-      const response = await fetch(`${baseUrl}/delete/${bookId}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-Auth-Token': '12345',
-        },
-      });
-      const responseJson = await response.json();
-      showResponseMessage(responseJson.message);
+      const response = await request.delete(`/delete/${bookId}`);
+      showResponseMessage(response.data.message);
       getBook();
     } catch (error) {
       showResponseMessage(error);
