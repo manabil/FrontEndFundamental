@@ -4,14 +4,14 @@
   "description": "An app to search club information",
   "main": "app.js",
   "scripts": {
-    "start": "npx http-server ./dist",
+    "start": "http-server ./dist",
     "lint": "npx eslint . -c config/.eslintrc.js --ext .js",
     "pretty": "npx prettier --check .",
     "format": "npx prettier --write .",
     "fix": "npx eslint . -c config/.eslintrc.js --ext .js --fix",
     "repair": "npm run format && npm run fix",
-    "start-dev": "webpack serve --config config/webpack.dev.js",
-    "build": "webpack --config config/webpack.prod.js"
+    "build": "webpack --config config/webpack.prod.js",
+    "start-dev": "webpack serve --config config/webpack.dev.js"
   },
   "repository": {
     "type": "git",
