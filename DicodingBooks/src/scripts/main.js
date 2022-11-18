@@ -1,75 +1,204 @@
 function main() {
   const baseUrl = 'https://books-api.dicoding.dev';
-  const getBook = () => {
-    const xhr = new XMLHttpRequest();
+  const getBook = async () => {
+    // XMR Request
+    // const xhr = new XMLHttpRequest();
+    // xhr.onload = function () {
+    //   const responseJson = JSON.parse(this.responseText);
+    //   if (responseJson.error) {
+    //     showResponseMessage(responseJson.message);
+    //   } else {
+    //     renderAllBooks(responseJson.books);
+    //   }
+    // };
+    // xhr.onerror = function () {
+    //   showResponseMessage();
+    // };
+    // xhr.open('GET', `${baseUrl}/list`);
+    // xhr.send();
+    //
+    // Fetch Request
+    // fetch(`${baseUrl}/list`)
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((responseJson) => {
+    //     if (responseJson.error) {
+    //       showResponseMessage(responseJson.message);
+    //     } else {
+    //       renderAllBooks(responseJson.books);
+    //     }
+    //   })
+    //   .catch((error) => {
+    //     showResponseMessage(error);
+    //   });
+    // Async Request
+    try {
+      const response = await fetch(`${baseUrl}/list`);
+      const responseJson = await response.json();
 
-    xhr.onload = function () {
-      const responseJson = JSON.parse(this.responseText);
       if (responseJson.error) {
         showResponseMessage(responseJson.message);
       } else {
         renderAllBooks(responseJson.books);
       }
-    };
-    xhr.onerror = function () {
-      showResponseMessage();
-    };
-
-    xhr.open('GET', `${baseUrl}/list`);
-    xhr.send();
+    } catch (error) {
+      showResponseMessage(error);
+    }
   };
 
-  const insertBook = (book) => {
-    const xhr = new XMLHttpRequest();
-
-    xhr.onload = function () {
-      const responseJson = JSON.parse(this.responseText);
+  const insertBook = async (book) => {
+    // XMR Request
+    // const xhr = new XMLHttpRequest();
+    // xhr.onload = function () {
+    //   const responseJson = JSON.parse(this.responseText);
+    //   showResponseMessage(responseJson.message);
+    //   getBook();
+    // };
+    // xhr.onerror = function () {
+    //   showResponseMessage();
+    // };
+    // xhr.open('POST', `${baseUrl}/add`);
+    // xhr.setRequestHeader('Content-Type', 'application/json');
+    // xhr.setRequestHeader('X-Auth-Token', '12345');
+    // xhr.send(JSON.stringify(book));
+    // Fetch Request
+    // fetch(`${baseUrl}/add`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'X-Auth-Token': '12345',
+    //   },
+    //   body: JSON.stringify(book),
+    // })
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((responseJson) => {
+    //     showResponseMessage(responseJson.message);
+    //     getBook();
+    //   })
+    //   .catch((error) => {
+    //     showResponseMessage(error);
+    //   });
+    // Async Request
+    try {
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Auth-Token': '12345',
+        },
+        body: JSON.stringify(book),
+      };
+      const response = await fetch(`${baseUrl}/add`, options);
+      const responseJson = await response.json();
       showResponseMessage(responseJson.message);
       getBook();
-    };
-    xhr.onerror = function () {
-      showResponseMessage();
-    };
-
-    xhr.open('POST', `${baseUrl}/add`);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('X-Auth-Token', '12345');
-    xhr.send(JSON.stringify(book));
+    } catch (error) {
+      showResponseMessage(error);
+    }
   };
 
-  const updateBook = (book) => {
-    const xhr = new XMLHttpRequest();
-
-    xhr.onload = function () {
-      const responseJson = JSON.parse(this.responseText);
+  const updateBook = async (book) => {
+    // XMR Request
+    // const xhr = new XMLHttpRequest();
+    // xhr.onload = function () {
+    //   const responseJson = JSON.parse(this.responseText);
+    //   showResponseMessage(responseJson.message);
+    //   getBook();
+    // };
+    // xhr.onerror = function () {
+    //   showResponseMessage();
+    // };
+    // xhr.open('PUT', `${baseUrl}/edit/${book.id}`);
+    // xhr.setRequestHeader('Content-Type', 'application/json');
+    // xhr.setRequestHeader('X-Auth-Token', '12345');
+    // xhr.send(JSON.stringify(book));
+    // Fetch Request
+    // fetch(`${baseUrl}/edit/${book.id}`, {
+    //   method: 'PUT',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //     'X-Auth-Token': '12345',
+    //   },
+    //   body: JSON.stringify(book),
+    // })
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((responseJson) => {
+    //     showResponseMessage(responseJson.message);
+    //     getBook();
+    //   })
+    //   .catch((error) => {
+    //     showResponseMessage(error);
+    //   });
+    // Async Request
+    try {
+      const options = {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Auth-Token': '12345',
+        },
+        body: JSON.stringify(book),
+      };
+      const response = await fetch(`${baseUrl}/edit/${book.id}`, options);
+      const responseJson = await response.json();
       showResponseMessage(responseJson.message);
       getBook();
-    };
-    xhr.onerror = function () {
-      showResponseMessage();
-    };
-
-    xhr.open('PUT', `${baseUrl}/edit/${book.id}`);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('X-Auth-Token', '12345');
-    xhr.send(JSON.stringify(book));
+    } catch (error) {
+      showResponseMessage(error);
+    }
   };
 
-  const removeBook = (bookId) => {
-    const xhr = new XMLHttpRequest();
-
-    xhr.onload = function () {
-      const responseJson = JSON.parse(this.responseText);
+  const removeBook = async (bookId) => {
+    // XMR Request
+    // const xhr = new XMLHttpRequest();
+    // xhr.onload = function () {
+    //   const responseJson = JSON.parse(this.responseText);
+    //   showResponseMessage(responseJson.message);
+    //   getBook();
+    // };
+    // xhr.onerror = function () {
+    //   showResponseMessage();
+    // };
+    // xhr.open('DELETE', `${baseUrl}/delete/${bookId}`);
+    // xhr.setRequestHeader('X-Auth-Token', '12345');
+    // xhr.send();
+    // Fetch Request
+    // fetch(`${baseUrl}/delete/${bookId}`, {
+    //   method: 'DELETE',
+    //   headers: {
+    //     'X-Auth-Token': '12345',
+    //   },
+    // })
+    //   .then((response) => {
+    //     return response.json();
+    //   })
+    //   .then((responseJson) => {
+    //     showResponseMessage(responseJson.message);
+    //     getBook();
+    //   })
+    //   .catch((error) => {
+    //     showResponseMessage(error);
+    //   });
+    // Async Request
+    try {
+      const response = await fetch(`${baseUrl}/delete/${bookId}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Auth-Token': '12345',
+        },
+      });
+      const responseJson = await response.json();
       showResponseMessage(responseJson.message);
       getBook();
-    };
-    xhr.onerror = function () {
-      showResponseMessage();
-    };
-
-    xhr.open('DELETE', `${baseUrl}/delete/${bookId}`);
-    xhr.setRequestHeader('X-Auth-Token', '12345');
-    xhr.send();
+    } catch (error) {
+      showResponseMessage(error);
+    }
   };
 
   const renderAllBooks = (books) => {
