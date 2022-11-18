@@ -4,7 +4,7 @@ import '../components/club-item.js';
 class ClubList extends HTMLElement {
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' });
+    this.shadowDOM = this.attachShadow({mode: 'open'});
   }
 
   set clubs(clubs) {

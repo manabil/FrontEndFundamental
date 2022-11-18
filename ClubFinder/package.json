@@ -6,6 +6,10 @@
   "scripts": {
     "start": "npx http-server ./dist",
     "lint": "npx eslint . -c config/.eslintrc.js --ext .js",
+    "pretty": "npx prettier --check .",
+    "format": "npx prettier --write .",
+    "fix": "npx eslint . -c config/.eslintrc.js --ext .js --fix",
+    "repair": "npm run format && npm run fix",
     "start-dev": "webpack serve --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js"
   },
