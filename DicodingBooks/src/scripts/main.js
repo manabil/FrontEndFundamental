@@ -4,7 +4,7 @@ function main() {
   const baseUrl = 'https://books-api.dicoding.dev';
   const request = axios.create({
     baseURL: 'https://books-api.dicoding.dev',
-    headers: { 'X-Auth-Token': '12345' },
+    headers: {'X-Auth-Token': '12345'},
   });
 
   const getBook = async () => {
@@ -221,7 +221,7 @@ function main() {
     const buttonSave = document.querySelector('#buttonSave');
     const buttonUpdate = document.querySelector('#buttonUpdate');
 
-    buttonSave.addEventListener('click', function () {
+    buttonSave.addEventListener('click', function() {
       const book = {
         id: Number.parseInt(inputBookId.value),
         title: inputBookTitle.value,
@@ -231,7 +231,7 @@ function main() {
       insertBook(book);
     });
 
-    buttonUpdate.addEventListener('click', function () {
+    buttonUpdate.addEventListener('click', function() {
       const book = {
         id: Number.parseInt(inputBookId.value),
         title: inputBookTitle.value,
