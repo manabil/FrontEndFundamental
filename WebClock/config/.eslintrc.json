@@ -10,5 +10,6 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
+  "ignorePatterns": ["dist/", "config"],
   "rules": {}
 }
