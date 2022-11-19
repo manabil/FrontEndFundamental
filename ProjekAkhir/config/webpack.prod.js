@@ -12,11 +12,11 @@ module.exports = merge(common, {
             loader: 'babel-loader',
             exclude: /(node_modules|bower_components)/,
             options: {
-              presets: ['@babel/preset-env']
-            }
-          }
-        ]
-      }
-    ]
-  }
+              presets: ['@babel/preset-env'],
+            },
+          },
+        ],
+      },
+    ],
+  },
 });
