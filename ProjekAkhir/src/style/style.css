@@ -4,45 +4,213 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: 'Ubuntu', 'Lucida Sans', 'Lucida Sans Regular';
-  text-align: center;
+  font-family: 'Ubuntu', Arial, Helvetica, sans-serif;
+}
+body {
+  margin: 0 50px;
+  background-color: #23242e;
+  color: white;
 }
 .container {
-  width: 900px;
-  height: 600px;
-  border: 1px solid black;
-  margin: auto;
   display: grid;
-  grid-template-areas:
-    'header header'
-    'nav main'
-    'aside main'
-    'footer footer';
-  grid-template-rows: 0.25fr 0.7fr 2fr 0.25fr;
-  grid-template-columns: 1fr 1.5fr;
+  gap: 100px;
 }
-header {
-  grid-area: header;
-  background-color: #b063d8;
-  padding: 10px;
-}
-aside {
-  grid-area: aside;
-  background-color: #2f93ff;
-  padding: 10px;
-}
+
+/* *Navbar* */
 nav {
-  grid-area: nav;
-  background-color: #e45765;
-  padding: 10px;
+  margin-top: 20px;
 }
-main {
-  grid-area: main;
-  background-color: #e0aa77;
-  padding: 10px;
+.logo {
+  place-self: center start;
 }
+.menu {
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+}
+.menu ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  text-align: center;
+  list-style: none;
+  place-content: center;
+  gap: 5px;
+}
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  font-size: 1em;
+  letter-spacing: 1px;
+}
+.menu a:hover {
+  color: #6b728e;
+}
+.menu a#nav-button {
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.menu a#nav-button:hover {
+  border: 1px solid #6b728e;
+  border-radius: 5px;
+}
+
+/* *Header* */
+.header {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: center;
+}
+.header .heading {
+  font-size: 4.5em;
+  font-weight: 300;
+}
+.header .sub-heading {
+  margin-top: 20px;
+  font-size: 1.3em;
+  font-weight: 300;
+}
+.header img {
+  place-self: center;
+  width: 70%;
+}
+
+/* *Form* */
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  place-items: center;
+}
+textarea#inputSentence {
+  background-color: #23242e;
+  color: white;
+  border: 1px solid #6b728e;
+  padding: 20px;
+  border-radius: 10px;
+  resize: none;
+}
+form {
+  display: grid;
+  width: 100%;
+  justify-items: stretch;
+}
+form button {
+  background-color: rgba(0, 0, 0, 0);
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px solid white;
+  margin-top: 20px;
+  justify-self: end;
+  width: fit-content;
+}
+form button:hover {
+  border: 1px solid #6b728e;
+  border-radius: 5px;
+  color: #6b728e;
+}
+.main .result {
+  display: grid;
+  font-size: 2em;
+  place-items: center;
+}
+
+/* *Footer* */
 footer {
-  grid-area: footer;
-  background-color: #666;
-  padding: 10px;
+  padding: 10px 0em;
+  color: #fff;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+@media (max-width: 1200px) {
+  /* *Navbar* */
+  .menu {
+    grid-template-columns: 1fr 0.25fr;
+  }
+  .menu ul {
+    display: none;
+  }
+
+  /* *Header* */
+  .header .heading {
+    font-size: 3em;
+  }
+  .header .sub-heading {
+    font-size: 1em;
+  }
+
+  /* *Form* */
+  .main .result {
+    font-size: 1.5em;
+  }
+}
+@media (max-width: 992px) {
+  /* *Header* */
+  .header .heading {
+    font-size: 2em;
+    font-weight: 400;
+  }
+  .header .sub-heading {
+    font-size: 1em;
+  }
+
+  /* *Form* */
+  .main .result {
+    font-size: 1.25em;
+  }
+}
+@media (max-width: 768px) {
+  body {
+    margin: 0 30px;
+  }
+
+  /* *Navbar* */
+  .menu h1 {
+    font-size: 1.25em;
+  }
+
+  /* *Header* */
+  .header {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .header img {
+    width: 40%;
+    order: -1;
+  }
+
+  /* *Form* */
+  .main {
+    grid-template-columns: 1fr;
+    gap: 75px;
+  }
+  form button {
+    width: 100%;
+    font-size: 1.1em;
+  }
+  .main .result {
+    font-size: 2em;
+  }
+}
+@media (max-width: 576px) {
+  body {
+    margin: 0 20px;
+  }
+
+  /* *Navbar* */
+  .menu h1 {
+    font-size: 0.8em;
+  }
+
+  /* *Form* */
+  .main .result {
+    font-size: 1.5em;
+  }
+
+  /* *Footer* */
+  footer {
+    font-size: 0.7em;
+  }
 }

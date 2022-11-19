@@ -4,16 +4,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test</title>
+    <title>Sentiment Analysis Checker</title>
     <link rel="stylesheet" href="style/style.css" />
+    <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/angry-comic-mad-anger-symbol-38812.png" />
   </head>
   <body>
     <div class="container">
-      <header>HEADER</header>
-      <aside>ASIDE</aside>
-      <nav>NAV</nav>
-      <main>MAIN</main>
-      <footer>FOOTER</footer>
+      <nav class="menu">
+        <div class="logo">
+          <h1>💢 Sentiment Analysis Checker</h1>
+        </div>
+        <ul class="menu-list">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a id="nav-button" href="#">Sentiment It !</a></li>
+        </ul>
+      </nav>
+      <div class="header">
+        <div class="title">
+          <h1 class="heading">Let's check your happiness</h1>
+          <p class="sub-heading">Know your sentence. Know your speech. Know your sentiments. Know your emotions. Know your happiness.</p>
+        </div>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Comedy_and_tragedy_masks_without_background.svg/1200px-Comedy_and_tragedy_masks_without_background.svg.png"
+          alt="Two mask image"
+        />
+      </div>
+      <div class="main">
+        <form action="">
+          <textarea id="inputSentence" name="inputSentence" rows="10">Type your sentence here (english only).</textarea>
+          <button type="submit">Sentiment it !</button>
+        </form>
+        <div class="result">
+          <p class="icon">😄</p>
+          <p class="description">Your sentiment is positive</p>
+        </div>
+      </div>
+      <footer>
+        <p>Belajar Dasar Pemrograman Web &#169; 2019, Dicoding Academy</p>
+      </footer>
     </div>
     <script type="module" src="index.js"></script>
   </body>
