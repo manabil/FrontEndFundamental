@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sentiment Analysis Checker</title>
-    <link rel="stylesheet" href="style/style.css" />
     <link rel="icon" href="https://cdn.iconscout.com/icon/free/png-256/angry-comic-mad-anger-symbol-38812.png" />
   </head>
   <body>
@@ -19,6 +18,11 @@
           <li><a href="#contact-section">Contact</a></li>
           <li><a id="nav-button" href="#main-section">Sentiment It!</a></li>
         </ul>
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </nav>
       <div class="header" id="header-section">
         <div class="title">
@@ -38,8 +42,8 @@
           <textarea
             id="inputSentence"
             name="inputSentence"
-            rows="10"
-            maxlength="10"
+            rows="12"
+            maxlength="999"
             placeholder="Type your sentence here (english only and max 1000 character)"
           ></textarea>
           <p class="counter">0/1000</p>
@@ -55,7 +59,7 @@
           <h2>Contact Me</h2>
         </div>
         <div class="card">
-          <img src="https://mycatalog.vercel.app/assets/images/aku.jpg" alt="Profile image" />
+          <img src="https://avatars.githubusercontent.com/u/106358157?v=4" alt="Profile image" />
           <div class="desc">
             <h3>Muhammad Ammar Nabil</h3>
             <p>Seseorang yang antusias akan ilmu baru termasuk science seperti operasi cangkok jantung babi</p>
@@ -77,6 +81,5 @@
         <p>Belajar Fundamental Front-End Web Development &#169; 2022, Dicoding Academy</p>
       </footer>
     </div>
-    <script type="module" src="index.js"></script>
   </body>
 </html>
