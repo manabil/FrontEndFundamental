@@ -35,8 +35,14 @@
           <h2>Type your Sentences</h2>
         </div>
         <form action="">
-          <textarea id="inputSentence" name="inputSentence" rows="10" placeholder="Type your sentence here (english only and max 1000 character)"></textarea>
-          <p>0/1000</p>
+          <textarea
+            id="inputSentence"
+            name="inputSentence"
+            rows="10"
+            maxlength="10"
+            placeholder="Type your sentence here (english only and max 1000 character)"
+          ></textarea>
+          <p class="counter">0/1000</p>
           <button type="submit">Sentiment it !</button>
         </form>
         <div class="result">
