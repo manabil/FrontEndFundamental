@@ -19,7 +19,7 @@ function main() {
       console.log(error);
     }
   }
-  getLanguage();
+  // getLanguage();
   getSentiment();
 }
 

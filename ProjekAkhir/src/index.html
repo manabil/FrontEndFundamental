@@ -25,7 +25,26 @@
         </div>
       </nav>
       <hero-menu></hero-menu>
-      <main-menu></main-menu>
+      <div class="main" id="main-section">
+        <div class="heading">
+          <h2>Type your Sentences</h2>
+        </div>
+        <form action="">
+          <textarea
+            id="inputSentence"
+            name="inputSentence"
+            rows="12"
+            maxlength="999"
+            placeholder="Type your sentence here (english only and max 1000 character)"
+          ></textarea>
+          <p class="counter">0/1000</p>
+          <button type="submit">Sentiment it !</button>
+        </form>
+        <div class="result">
+          <p class="icon">😄</p>
+          <p class="description">Your sentiment is positive</p>
+        </div>
+      </div>
       <div class="contact" id="contact-section">
         <div class="heading">
           <h2>Contact Me</h2>
@@ -49,9 +68,7 @@
           </div>
         </div>
       </div>
-      <footer>
-        <p>Belajar Fundamental Front-End Web Development &#169; 2022, Dicoding Academy</p>
-      </footer>
+      <footer-menu></footer-menu>
     </div>
   </body>
 </html>
