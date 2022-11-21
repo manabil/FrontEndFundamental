@@ -1,26 +1,29 @@
 'use strict';
 import DataRequest from '../data/data-request.js';
+import $ from 'jquery';
 
 function main() {
   const request = new DataRequest();
-  async function getSentiment() {
+
+  $('#formText').on('submit', function (event) {
+    event.preventDefault();
+    let sentences = $('textarea').val();
+    getSentiment(sentences);
+  });
+
+  function render(result) {
+    $('.icon').text(result.emoji);
+    $('.description').text(result.desc);
+  }
+
+  async function getSentiment(text) {
     try {
-      const response = await request.sentimentIt();
-      console.log(response);
+      const response = await request.sentimentIt(text);
+      render(response);
     } catch (error) {
-      console.log(error);
+      return error;
     }
   }
-  async function getLanguage() {
-    try {
-      const response = await request.languageCheck();
-      console.log(response);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-  // getLanguage();
-  getSentiment();
 }
 
 export default main;

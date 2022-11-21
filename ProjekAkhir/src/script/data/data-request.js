@@ -12,27 +12,32 @@ class DataRequest {
     });
   }
 
-  async sentimentIt(textInput = 'Im very happy to be with you') {
+  async sentimentIt(textInput) {
     const data = {
       language: 'english',
       text: `${textInput}`,
     };
 
     try {
-      const response = await this.request.post('/sentiment-analysis/api/v1.1', data);
-      const sentiment = response.data.sentiment;
-      if (sentiment == 'positive') {
-        return { result: sentiment, desc: 'Yeay, your sentiment is positive' };
-      } else if (sentiment == 'neutral') {
-        return { result: sentiment, desc: 'Your sentiment is neutral' };
+      const isEnglish = await this.languageCheck(textInput);
+      if (isEnglish == true) {
+        const response = await this.request.post('/sentiment-analysis/api/v1.1', data);
+        const sentiment = response.data.sentiment;
+        if (sentiment == 'positive') {
+          return { result: sentiment, emoji: '😄', desc: 'Yeay, your sentiment is positive' };
+        } else if (sentiment == 'neutral') {
+          return { result: sentiment, emoji: '😐', desc: 'Your sentiment is neutral' };
+        }
+        return { result: sentiment, emoji: '😠', desc: 'Why do you think that ?' };
+      } else {
+        throw isEnglish;
       }
-      return { result: sentiment, desc: 'Why do you think that ?' };
-    } catch (error) {
-      return error;
+    } catch (isEnglish) {
+      return isEnglish;
     }
   }
 
-  async languageCheck(textInput = 'I want to be senior programmer in google') {
+  async languageCheck(textInput) {
     const data = { text: `${textInput}` };
 
     try {
@@ -40,11 +45,11 @@ class DataRequest {
       const isEnglish = 'en' in response.data.language_probability;
       if (isEnglish) {
         if (response.data.language_probability.en <= 0.5) {
-          throw 'Is sentences in english ? Please check your sentences';
+          return { emoji: '🇬🇧 ⁉️', desc: 'Is sentences in english ? Please check your sentences' };
         }
         return true;
       } else {
-        throw 'Your sentences not in english, please change english instead';
+        return { emoji: '🇬🇧  ❗', desc: 'Please use english sentence instead' };
       }
     } catch (error) {
       return error;
