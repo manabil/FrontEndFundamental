@@ -3,8 +3,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-template-areas:
-    'heading-contact'
-    'card-contact';
+    "heading-contact"
+    "card-contact";
   place-self: center;
   gap: 50px;
   text-align: center;

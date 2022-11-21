@@ -3,8 +3,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-template-areas:
-    'heading heading'
-    'form result';
+    "heading heading"
+    "form result";
   place-items: center;
   row-gap: 50px;
 }
@@ -82,9 +82,9 @@ form button:hover {
     grid-template-columns: 1fr;
     gap: 75px;
     grid-template-areas:
-      'heading'
-      'form'
-      'result';
+      "heading"
+      "form"
+      "result";
   }
   form button {
     width: 100%;

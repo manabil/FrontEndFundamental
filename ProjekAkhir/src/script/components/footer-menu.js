@@ -1,12 +1,24 @@
 'use strict';
+/**
+ * Class of Footer menu custom element
+ */
 class FooterMenu extends HTMLElement {
+  /**
+   * Attach shadow DOM
+   */
   constructor() {
     super();
-    this.shadowDOM = this.attachShadow({ mode: 'open' });
+    this.shadowDOM = this.attachShadow({mode: 'open'});
   }
+  /**
+   * Render when element created
+   */
   connectedCallback() {
     this.render();
   }
+  /**
+   * Render element
+   */
   render() {
     this.shadowDOM.innerHTML = `
       <style>

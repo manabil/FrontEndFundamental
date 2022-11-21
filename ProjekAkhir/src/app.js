@@ -9,6 +9,6 @@ import './script/view/counter.js';
 import main from './script/view/main.js';
 import $ from 'jquery';
 
-$(function () {
+$(function() {
   main();
 });
