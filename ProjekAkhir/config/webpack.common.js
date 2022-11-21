@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const {EnvironmentPlugin} = require('webpack');
+require('dotenv').config();
 
 module.exports = {
   entry: './src/app.js',
@@ -26,6 +28,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html',
+    }),
+    new EnvironmentPlugin({
+      API_KEY: process.env.X_RAPIDAPI_KEY,
+      API_HOST: process.env.X_RAPIDAPI_HOST,
     }),
   ],
 };
