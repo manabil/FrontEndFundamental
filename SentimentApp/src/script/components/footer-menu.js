@@ -1,3 +1,4 @@
+/* eslint max-len: ["error", { "code": 100 }]*/
 'use strict';
 /**
  * Class of Footer menu custom element

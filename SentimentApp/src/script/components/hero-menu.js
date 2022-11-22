@@ -1,3 +1,4 @@
+/* eslint max-len: ["error", { "code": 190 }]*/
 'use strict';
 /**
  * Class of Hero menu custom element

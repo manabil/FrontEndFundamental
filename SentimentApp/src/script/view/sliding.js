@@ -3,9 +3,9 @@ import $ from 'jquery';
 
 let clicked = true;
 
-$('.hamburger').on('click', function() {
+$('.hamburger').on('click', () => {
   $('.menu-list').slideToggle();
-  $('.menu a').on('click', function() {
+  $('.menu a').on('click', () => {
     animationToggle();
     $('.menu-list').slideUp();
   });

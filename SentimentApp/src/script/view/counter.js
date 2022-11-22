@@ -1,7 +1,7 @@
 'use strict';
 import $ from 'jquery';
 
-$('textarea').on('keydown', function() {
+$('textarea').on('keydown', () => {
   const count = $('textarea').val().length + 1;
   $('.counter').text(`${count}/1000`);
   if (count >= 900) {

@@ -31,19 +31,19 @@ class DataRequest {
 
     try {
       const isEnglish = await this.languageCheck(textInput);
-      if (isEnglish == true) {
+      if (isEnglish === true) {
         const response = await this.request.post(
             '/sentiment-analysis/api/v1.1',
             data,
         );
         const sentiment = response.data.sentiment;
-        if (sentiment == 'positive') {
+        if (sentiment === 'positive') {
           return {
             result: sentiment,
             emoji: '😄',
             desc: 'Yeay, your sentiment is positive',
           };
-        } else if (sentiment == 'neutral') {
+        } else if (sentiment === 'neutral') {
           return {
             result: sentiment,
             emoji: '😐',
