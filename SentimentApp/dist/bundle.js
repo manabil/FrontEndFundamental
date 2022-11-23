@@ -10635,7 +10635,7 @@ jquery_default()('.hamburger').on('click', function () {
   /**
    * Transition hamburger menu
    */
-  function animationToggle() {
+  var animationToggle = function animationToggle() {
     if (clicked) {
       clicked = false;
       jquery_default()('.hamburger').children().first().css({
@@ -10645,7 +10645,7 @@ jquery_default()('.hamburger').on('click', function () {
       jquery_default()('.hamburger').children().eq(1).css('scale', '0');
       jquery_default()('.hamburger').children().last().css({
         'transform-origin': '0 0',
-        'rotate': '-45deg'
+        rotate: '-45deg'
       });
     } else {
       clicked = true;
@@ -10656,10 +10656,10 @@ jquery_default()('.hamburger').on('click', function () {
       jquery_default()('.hamburger').children().eq(1).css('scale', '1');
       jquery_default()('.hamburger').children().last().css({
         'transform-origin': '0 0',
-        'rotate': '0deg'
+        rotate: '0deg'
       });
     }
-  }
+  };
 });
 ;// CONCATENATED MODULE: ./src/script/view/counter.js
 
@@ -13707,7 +13707,7 @@ function main_asyncToGenerator(fn) { return function () { var self = this, args 
 /**
  * Main function to request API
  */
-function main() {
+var main = function main() {
   var request = new data_request();
   jquery_default()('#formText').on('submit', function (event) {
     event.preventDefault();
@@ -13759,7 +13759,7 @@ function main() {
       return _ref.apply(this, arguments);
     };
   }();
-}
+};
 /* harmony default export */ const view_main = (main);
 ;// CONCATENATED MODULE: ./src/app.js
 

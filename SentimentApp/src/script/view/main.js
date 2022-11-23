@@ -5,7 +5,7 @@ import $ from 'jquery';
 /**
  * Main function to request API
  */
-function main() {
+const main = () => {
   const request = new DataRequest();
 
   $('#formText').on('submit', (event) => {
@@ -36,6 +36,6 @@ function main() {
       return error;
     }
   };
-}
+};
 
 export default main;

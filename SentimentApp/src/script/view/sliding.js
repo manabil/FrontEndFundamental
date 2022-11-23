@@ -14,7 +14,7 @@ $('.hamburger').on('click', () => {
   /**
    * Transition hamburger menu
    */
-  function animationToggle() {
+  const animationToggle = () => {
     if (clicked) {
       clicked = false;
       $('.hamburger')
@@ -38,5 +38,5 @@ $('.hamburger').on('click', () => {
           .last()
           .css({'transform-origin': '0 0', 'rotate': '0deg'});
     }
-  }
+  };
 });
