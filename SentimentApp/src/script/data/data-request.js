@@ -12,8 +12,8 @@ class DataRequest {
     this.request = axios.create({
       baseURL: 'https://text-analysis12.p.rapidapi.com',
       headers: {
-        'X-RapidAPI-Key': process.env.API_KEY,
-        'X-RapidAPI-Host': process.env.API_HOST,
+        'X-RapidAPI-Key': process.env.SENTIMENT_API_KEY,
+        'X-RapidAPI-Host': process.env.SENTIMENT_API_HOST,
       },
     });
   }
