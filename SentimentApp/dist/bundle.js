@@ -13545,8 +13545,8 @@ var DataRequest = /*#__PURE__*/function () {
     this.request = node_modules_axios.create({
       baseURL: 'https://text-analysis12.p.rapidapi.com',
       headers: {
-        'X-RapidAPI-Key': "911a887518mshe3a53e3e6f01b08p189d8ejsnedf08aeef539",
-        'X-RapidAPI-Host': "text-analysis12.p.rapidapi.com"
+        'X-RapidAPI-Key': process.env.API_KEY,
+ 	'X-RapidAPI-Host': process.env.API_HOST,
       }
     });
   }
